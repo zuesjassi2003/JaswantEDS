@@ -323,7 +323,7 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
-/* ===== HEADER ===== */
+/* ===== HEADER FIXED ===== */
 
 header {
   background: #0b3d91;
@@ -335,28 +335,36 @@ header .nav-wrapper {
   margin: 0 auto;
 }
 
+/* THIS IS IMPORTANT */
 header .columns > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
-/* logo size */
+/* logo */
 header img {
   height: 40px;
 }
 
-/* links styling */
+/* right side links */
+header .columns > div > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* links */
 header a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
   font-weight: 500;
 }
 
 /* primary button */
-header a:first-child {
+header .columns > div > div:last-child a:first-child {
   background: #ff3b30;
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: 4px;
 }
