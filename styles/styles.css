@@ -323,3 +323,40 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+/* ===== HEADER ===== */
+
+header {
+  background: #0b3d91;
+  padding: 12px 40px;
+}
+
+header .nav-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header .columns > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo size */
+header img {
+  height: 40px;
+}
+
+/* links styling */
+header a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+/* primary button */
+header a:first-child {
+  background: #ff3b30;
+  padding: 8px 18px;
+  border-radius: 4px;
+}
