@@ -408,3 +408,15 @@ header .columns > div > div:last-child a:not(:first-child) {
 header .header.block {
   padding: 0;
 }
+
+/* hide hamburger on desktop */
+@media (min-width: 900px) {
+  header .nav-hamburger {
+    display: none;
+  }
+}
+
+header #nav {
+  display: flex;
+  align-items: center;
+}
