@@ -328,9 +328,17 @@ main .section.highlight {
 /* ================= HEADER ================= */
 
 header {
-  background: #0b3d91;
+  background: #17469e;
+  padding: 0;
 }
 
+/* center content */
+header .nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* remove default columns spacing */
 header .columns {
   padding: 0;
 }
@@ -339,46 +347,64 @@ header .columns > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
+  height: 72px;
+  padding: 0 20px;
 }
 
+/* remove default flex from columns */
 header .columns > div > div {
   flex: unset;
 }
 
-/* center search */
+/* logo */
+header .columns-img-col img {
+  height: 44px;
+}
+
+/* center search area */
 header .columns > div > div:nth-child(2) {
   flex: 1;
   text-align: center;
 }
 
-/* right buttons */
+/* search style */
+header .columns > div > div:nth-child(2) p {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+  opacity: 0.9;
+}
+
+/* right buttons container */
 header .columns > div > div:last-child {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 14px;
 }
 
-/* buttons */
+/* base link */
 header a {
-  color: white;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
-}
-
-header .columns > div > div:last-child a:first-child {
-  background: #ff3b30;
-  padding: 10px 18px;
-  border-radius: 4px;
   font-weight: 600;
 }
 
-header .columns > div > div:last-child a:not(:first-child) {
-  background: rgba(255,255,255,0.15);
-  padding: 10px 16px;
+/* primary button */
+header .columns > div > div:last-child a:first-child {
+  background: #ff3b30;
+  color: white;
+  padding: 10px 18px;
   border-radius: 4px;
 }
 
-header img {
-  height: 42px;
+/* secondary buttons */
+header .columns > div > div:last-child a:not(:first-child) {
+  background: #5b86c5;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 4px;
+}
+
+header .header.block {
+  padding: 0;
 }
