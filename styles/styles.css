@@ -325,29 +325,42 @@ main .section.highlight {
 }
 /* ===== HEADER FIXED ===== */
 
-/* HEADER LAYOUT */
+/* ================= HEADER ================= */
 
 header {
   background: #0b3d91;
   padding: 12px 40px;
 }
 
+/* override default columns block behavior */
 header .columns > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
+/* STOP equal flex from columns.css */
 header .columns > div > div {
-  flex: 1;
+  flex: unset;
 }
 
-/* right column */
+/* logo column */
+header .columns-img-col {
+  flex: 0 0 auto;
+}
+
+/* search column */
+header .columns > div > div:nth-child(2) {
+  flex: 1;
+  text-align: center;
+}
+
+/* buttons column */
 header .columns > div > div:last-child {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
+  flex: 0 0 auto;
 }
 
 header img {
