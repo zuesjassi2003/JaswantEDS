@@ -329,46 +329,69 @@ main .section.highlight {
 
 header {
   background: #0b3d91;
-  padding: 12px 40px;
+  padding: 0;
 }
 
-/* override default columns block behavior */
+/* container width */
+header .nav-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* remove default columns spacing */
+header .columns {
+  padding: 0;
+}
+
 header .columns > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 14px 20px;
 }
 
-/* STOP equal flex from columns.css */
+/* remove default flex behavior from columns.css */
 header .columns > div > div {
   flex: unset;
 }
 
-/* logo column */
-header .columns-img-col {
-  flex: 0 0 auto;
+/* logo */
+header .columns-img-col img {
+  height: 42px;
 }
 
-/* search column */
+/* search area (center) */
 header .columns > div > div:nth-child(2) {
   flex: 1;
   text-align: center;
 }
 
-/* buttons column */
+/* right buttons */
 header .columns > div > div:last-child {
   display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  flex: 0 0 auto;
+  align-items: center;
+  gap: 18px;
 }
 
-header img {
-  height: 40px;
-}
-
+/* links */
 header a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  font-size: 14px;
+}
+
+/* primary button */
+header .columns > div > div:last-child a:first-child {
+  background: #ff3b30;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* secondary buttons */
+header .columns > div > div:last-child a:not(:first-child) {
+  background: rgba(255,255,255,0.15);
+  padding: 10px 16px;
+  border-radius: 4px;
 }
