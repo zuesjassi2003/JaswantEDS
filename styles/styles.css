@@ -325,17 +325,13 @@ main .section.highlight {
 }
 /* ===== HEADER FIXED ===== */
 
+/* HEADER LAYOUT */
+
 header {
   background: #0b3d91;
   padding: 12px 40px;
 }
 
-header .nav-wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-/* THIS IS IMPORTANT */
 header .columns > div {
   display: flex;
   align-items: center;
@@ -343,28 +339,23 @@ header .columns > div {
   width: 100%;
 }
 
-/* logo */
+header .columns > div > div {
+  flex: 1;
+}
+
+/* right column */
+header .columns > div > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
 header img {
   height: 40px;
 }
 
-/* right side links */
-header .columns > div > div:last-child {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* links */
 header a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-}
-
-/* primary button */
-header .columns > div > div:last-child a:first-child {
-  background: #ff3b30;
-  padding: 8px 16px;
-  border-radius: 4px;
 }
