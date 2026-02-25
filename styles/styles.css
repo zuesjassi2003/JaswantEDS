@@ -327,8 +327,11 @@ main .section.highlight {
 
 /* ================= HEADER ================= */
 
+/* =========================
+   GLOBAL HEADER RESET
+========================= */
+
 header {
-  background: #17469e;
   padding: 0;
 }
 
@@ -338,11 +341,39 @@ header .nav-wrapper {
   margin: 0 auto;
 }
 
+/* remove default padding */
+header .header.block {
+  padding: 0;
+}
+
+
+/* =========================
+   TOP TICKER BAR
+========================= */
+
+header .section:first-child {
+  background: #0b3d91;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+
+/* =========================
+   MAIN NAV BAR
+========================= */
+
+header .section:nth-child(2) {
+  background: #1f4fa3;
+}
+
 /* remove default columns spacing */
 header .columns {
   padding: 0;
 }
 
+/* main nav container */
 header .columns > div {
   display: flex;
   align-items: center;
@@ -351,23 +382,30 @@ header .columns > div {
   padding: 0 20px;
 }
 
-/* remove default flex from columns */
+/* remove default flex */
 header .columns > div > div {
   flex: unset;
 }
 
-/* logo */
+
+/* =========================
+   LOGO
+========================= */
+
 header .columns-img-col img {
   height: 44px;
 }
 
-/* center search area */
+
+/* =========================
+   CENTER SEARCH
+========================= */
+
 header .columns > div > div:nth-child(2) {
   flex: 1;
   text-align: center;
 }
 
-/* search style */
 header .columns > div > div:nth-child(2) p {
   margin: 0;
   font-size: 16px;
@@ -375,14 +413,17 @@ header .columns > div > div:nth-child(2) p {
   opacity: 0.9;
 }
 
-/* right buttons container */
+
+/* =========================
+   RIGHT BUTTONS
+========================= */
+
 header .columns > div > div:last-child {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* base link */
 header a {
   text-decoration: none;
   font-size: 14px;
@@ -394,7 +435,7 @@ header .columns > div > div:last-child a:first-child {
   background: #ff3b30;
   color: white;
   padding: 10px 18px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* secondary buttons */
@@ -402,14 +443,14 @@ header .columns > div > div:last-child a:not(:first-child) {
   background: #5b86c5;
   color: white;
   padding: 10px 18px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-header .header.block {
-  padding: 0;
-}
 
-/* hide hamburger on desktop */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (min-width: 900px) {
   header .nav-hamburger {
     display: none;
