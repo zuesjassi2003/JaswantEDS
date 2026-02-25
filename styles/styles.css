@@ -327,65 +327,93 @@ main .section.highlight {
 
 /* ================= HEADER ================= */
 
+/* ===== HEADER WRAPPER ===== */
 header {
-  background: #17469e;
+  background: #1f4fa3;
   padding: 0;
 }
 
-header .nav-wrapper {
+/* remove default spacing */
+header .columns-container {
+  padding: 0;
+}
+
+header .columns-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-header .columns {
+/* main header row */
+header .columns.block {
   padding: 0;
 }
 
-header .columns > div {
+header .columns.block > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  padding: 0 20px;
+  height: 80px;
+  padding: 0 24px;
 }
 
-header .columns > div > div {
+/* remove default column flex */
+header .columns.block > div > div {
   flex: unset;
 }
 
+/* LOGO */
 header .columns-img-col img {
-  height: 44px;
+  height: 46px;
 }
 
-/* Center search */
-header .columns > div > div:nth-child(2) {
+/* SEARCH CENTER */
+header .columns.block > div > div:nth-child(2) {
   flex: 1;
   text-align: center;
+}
+
+header .columns.block > div > div:nth-child(2) p {
+  margin: 0;
+  font-size: 16px;
   color: white;
 }
 
-/* Right buttons */
-header .columns > div > div:last-child {
+/* RIGHT BUTTONS */
+header .columns.block > div > div:last-child {
   display: flex;
-  gap: 14px;
+  gap: 16px;
+  align-items: center;
 }
 
+/* remove paragraph spacing */
+header p {
+  margin: 0;
+}
+
+/* LINKS BASE */
 header a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
+  border-radius: 4px;
+  padding: 10px 18px;
 }
 
-header .columns > div > div:last-child a:first-child {
+/* OPEN TRADING BUTTON */
+header .columns.block > div > div:last-child a:first-child {
   background: #ff3b30;
   color: white;
-  padding: 10px 18px;
-  border-radius: 4px;
 }
 
-header .columns > div > div:last-child a:not(:first-child) {
-  background: #5b86c5;
+/* LOGIN + INVESTRIGHT */
+header .columns.block > div > div:last-child a:not(:first-child) {
+  background: #5c86c5;
   color: white;
-  padding: 10px 18px;
-  border-radius: 4px;
+}
+
+/* hide hamburger desktop */
+@media (min-width: 900px) {
+  header .nav-hamburger {
+    display: none;
+  }
 }
