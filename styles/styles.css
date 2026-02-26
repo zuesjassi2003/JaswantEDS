@@ -408,6 +408,10 @@ header .columns > div > div:last-child a:not(:first-child) {
   background: #5b86c5;
 }
 
+header .columns > div > div:last-child a {
+  color: white !important;
+}
+
 /* hide hamburger desktop */
 @media (min-width: 900px) {
   header .nav-hamburger {
