@@ -329,92 +329,146 @@ main .section.highlight {
 
 /* ===== HEADER WRAPPER ===== */
 /* ===== HEADER BASE ===== */
-/* =========================
-   HEADER FULL WIDTH BLUE
-========================= */
-
+/* ---------- header layout: full-width blue bar with centered container ---------- */
 header.header-wrapper {
-  background: #17469e;
+  background: #17469e !important;            /* main blue */
+  padding: 0 !important;
+  box-shadow: none;
   width: 100%;
+  box-sizing: border-box;
 }
 
-/* remove default spacing */
-header .header.block {
-  padding: 0;
-  margin: 0;
-}
-
-/* container */
+/* center the content and keep a max width */
 header .nav-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* columns reset */
-header .columns {
-  padding: 0;
-}
-
-/* make row flex */
-header .columns > div {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  padding: 0 20px;
+  height: 80px;              /* header bar height */
+  box-sizing: border-box;
 }
 
-/* remove default flex */
-header .columns > div > div {
-  flex: unset;
+/* ensure nav container is full width and aligns items */
+header #nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-/* logo size */
-header .columns-img-col img {
-  height: 44px;
+/* Main columns wrapper (3 columns) */
+header .section.columns-container.nav-brand .columns-wrapper,
+header .columns.block.columns-3-cols {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-/* center search */
-header .columns > div > div:nth-child(2) {
+/* each of the 3 column cells */
+header .columns.block.columns-3-cols > div {
   flex: 1;
-  text-align: center;
-  color: white;
-}
-
-/* right buttons */
-header .columns > div > div:last-child {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;   /* default center; override per cell */
+  height: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
-/* buttons base */
-header a {
+/* left column (logo) — left align */
+header .columns.block.columns-3-cols > div:first-child {
+  justify-content: flex-start;
+  padding-left: 28px;
+}
+
+/* center column — center the Search text */
+header .columns.block.columns-3-cols > div:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+/* right column — right align and space between buttons */
+header .columns.block.columns-3-cols > div:last-child {
+  justify-content: flex-end;
+  gap: 18px;
+  padding-right: 28px;
+}
+
+/* logo sizing */
+header .columns-img-col img,
+header .columns.block.columns-3-cols .columns-img-col img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+/* Search text styling (center) */
+header .columns.block.columns-3-cols > div:nth-child(2) p,
+header .columns.block.columns-3-cols > div:nth-child(2) .search-label {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* remove default paragraphs margin */
+header p { margin: 0; }
+
+/* button base style */
+header .columns.block.columns-3-cols > div:last-child a,
+header .columns.block.columns-3-cols > div:last-child .btn {
+  display: inline-block;
   text-decoration: none;
+  font-weight: 700;
   font-size: 14px;
-  font-weight: 600;
+  line-height: 1;
   padding: 10px 18px;
-  border-radius: 4px;
-  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  box-sizing: border-box;
 }
 
-/* red primary */
-header .columns > div > div:last-child a:first-child {
+/* primary (first) button — red */
+header .columns.block.columns-3-cols > div:last-child a:first-child,
+header .columns.block.columns-3-cols > div:last-child .btn.primary {
   background: #ff3b30;
+  color: #ffffff;
 }
 
-/* light secondary */
-header .columns > div > div:last-child a:not(:first-child) {
-  background: #5b86c5;
+/* secondary (others) — soft blue */
+header .columns.block.columns-3-cols > div:last-child a:not(:first-child),
+header .columns.block.columns-3-cols > div:last-child .btn.secondary {
+  background: #6ea0df;   /* light blue */
+  color: #ffffff;
 }
 
-header .columns > div > div:last-child a {
-  color: white !important;
+/* keep buttons visually separated on small screens */
+header .columns.block.columns-3-cols > div:last-child a {
+  margin-left: 12px;
 }
 
-/* hide hamburger desktop */
-@media (min-width: 900px) {
-  header .nav-hamburger {
-    display: none;
-  }
+/* Responsive: collapse to mobile (show hamburger) */
+@media (max-width: 900px) {
+  header .nav-wrapper { padding: 0 12px; height: 64px; }
+  header .columns.block.columns-3-cols > div { padding: 0 8px; }
+  header .columns-img-col img { height: 40px; }
+
+  /* reduce spacing of buttons */
+  header .columns.block.columns-3-cols > div:last-child a { padding: 8px 12px; margin-left: 8px; }
+
+  /* show hamburger if present */
+  header .nav-hamburger { display: block !important; }
+}
+
+/* Very specific safety overrides (only if your site has stronger rules) */
+header.header-wrapper,
+header.header-wrapper * {
+  box-sizing: border-box !important;
 }
