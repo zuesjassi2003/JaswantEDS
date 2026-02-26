@@ -328,8 +328,9 @@ main .section.highlight {
 /* ================= HEADER ================= */
 
 /* ===== HEADER WRAPPER ===== */
+/* ===== HEADER BASE ===== */
 header {
-  background: #1f4fa3;
+  background: #17469e;
   padding: 0;
 }
 
@@ -343,12 +344,20 @@ header .columns-wrapper {
   margin: 0 auto;
 }
 
-/* main header row */
-header .columns.block {
-  padding: 0;
+/* ===== TICKER ROW ===== */
+header .columns.block:first-of-type > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  font-size: 14px;
+  color: white;
+  opacity: 0.9;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-header .columns.block > div {
+/* ===== MAIN HEADER ROW ===== */
+header .columns.block:last-of-type > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -356,7 +365,7 @@ header .columns.block > div {
   padding: 0 24px;
 }
 
-/* remove default column flex */
+/* remove default flex */
 header .columns.block > div > div {
   flex: unset;
 }
@@ -367,46 +376,41 @@ header .columns-img-col img {
 }
 
 /* SEARCH CENTER */
-header .columns.block > div > div:nth-child(2) {
+header .columns.block:last-of-type > div > div:nth-child(2) {
   flex: 1;
   text-align: center;
-}
-
-header .columns.block > div > div:nth-child(2) p {
-  margin: 0;
-  font-size: 16px;
   color: white;
+  font-size: 16px;
 }
 
 /* RIGHT BUTTONS */
-header .columns.block > div > div:last-child {
+header .columns.block:last-of-type > div > div:last-child {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-/* remove paragraph spacing */
 header p {
   margin: 0;
 }
 
-/* LINKS BASE */
+/* BUTTONS */
 header a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  border-radius: 4px;
   padding: 10px 18px;
+  border-radius: 4px;
 }
 
-/* OPEN TRADING BUTTON */
-header .columns.block > div > div:last-child a:first-child {
+/* PRIMARY BUTTON */
+header .columns.block:last-of-type > div > div:last-child a:first-child {
   background: #ff3b30;
   color: white;
 }
 
-/* LOGIN + INVESTRIGHT */
-header .columns.block > div > div:last-child a:not(:first-child) {
+/* SECONDARY BUTTONS */
+header .columns.block:last-of-type > div > div:last-child a:not(:first-child) {
   background: #5c86c5;
   color: white;
 }
