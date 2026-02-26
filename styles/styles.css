@@ -421,3 +421,7 @@ header .columns.block:last-of-type > div > div:last-child a:not(:first-child) {
     display: none;
   }
 }
+
+body {
+  background: red !important;
+}
