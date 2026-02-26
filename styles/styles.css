@@ -329,90 +329,88 @@ main .section.highlight {
 
 /* ===== HEADER WRAPPER ===== */
 /* ===== HEADER BASE ===== */
-/* ===== FULL HEADER BLUE ===== */
-header {
+/* =========================
+   HEADER FULL WIDTH BLUE
+========================= */
+
+header.header-wrapper {
   background: #17469e;
-  padding: 0;
+  width: 100%;
 }
 
-/* remove spacing */
-header .columns-container {
+/* remove default spacing */
+header .header.block {
   padding: 0;
+  margin: 0;
 }
 
-header .columns-wrapper {
+/* container */
+header .nav-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* BOTH rows white text */
-header .columns.block > div {
+/* columns reset */
+header .columns {
+  padding: 0;
+}
+
+/* make row flex */
+header .columns > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  color: white;
-}
-
-/* ===== TICKER ROW ===== */
-header .columns.block:first-child > div {
-  height: 36px;
-  justify-content: center;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-/* ===== MAIN HEADER ROW ===== */
-header .columns.block:last-child > div {
   height: 80px;
+  padding: 0 20px;
 }
 
 /* remove default flex */
-header .columns.block > div > div {
+header .columns > div > div {
   flex: unset;
 }
 
-/* LOGO */
+/* logo size */
 header .columns-img-col img {
-  height: 46px;
+  height: 44px;
 }
 
-/* SEARCH CENTER */
-header .columns.block:last-child > div > div:nth-child(2) {
+/* center search */
+header .columns > div > div:nth-child(2) {
   flex: 1;
   text-align: center;
-  font-size: 16px;
+  color: white;
 }
 
-/* BUTTON CONTAINER */
-header .columns.block:last-child > div > div:last-child {
+/* right buttons */
+header .columns > div > div:last-child {
   display: flex;
-  gap: 16px;
   align-items: center;
+  gap: 16px;
 }
 
-/* remove paragraph spacing */
-header p {
-  margin: 0;
-}
-
-/* BUTTON BASE */
+/* buttons base */
 header a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   padding: 10px 18px;
   border-radius: 4px;
+  color: white;
 }
 
-/* OPEN TRADING */
-header .columns.block:last-child a:first-child {
+/* red primary */
+header .columns > div > div:last-child a:first-child {
   background: #ff3b30;
-  color: white;
 }
 
-/* LOGIN + INVESTRIGHT */
-header .columns.block:last-child a:not(:first-child) {
-  background: #5c86c5;
-  color: white;
+/* light secondary */
+header .columns > div > div:last-child a:not(:first-child) {
+  background: #5b86c5;
+}
+
+/* hide hamburger desktop */
+@media (min-width: 900px) {
+  header .nav-hamburger {
+    display: none;
+  }
 }
