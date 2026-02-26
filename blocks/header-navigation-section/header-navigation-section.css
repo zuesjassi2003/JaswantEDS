@@ -1,0 +1,109 @@
+/*
+ * Styles for header-navigation-section layout blocks
+ * Scoped to .header-navigation-section and its child columns
+ * Responsive rules as per design requirements.
+ */
+
+/* SECTION: header-navigation-section */
+.header-navigation-section {
+  width: 100%;
+  background: #17469e;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* MARKET INDEX BAR */
+.header-navigation-section .market-index-bar {
+  height: 36px;
+  background: #123a82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+  padding: 0 12px;
+}
+
+/* MAIN NAVIGATION BAR */
+.header-navigation-section .main-navigation-bar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* BRAND COLUMN */
+.header-navigation-section .nav-brand-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header-navigation-section .nav-brand-column img {
+  height: 48px;
+  width: auto;
+  margin: 0;
+}
+
+/* SEARCH COLUMN */
+.header-navigation-section .nav-search-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* CTA COLUMN */
+.header-navigation-section .nav-cta-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.header-navigation-section .nav-cta-column a,
+.header-navigation-section .nav-cta-column button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.header-navigation-section .nav-cta-column .open-trading-account-button {
+  background: #ff3b30;
+  font-weight: 700;
+}
+
+.header-navigation-section .nav-cta-column .login-button,
+.header-navigation-section .nav-cta-column .investright-login-button {
+  background: #6ea0df;
+}
+
+/* RESPONSIVE RULES */
+@media (max-width: 899px) {
+  .header-navigation-section .main-navigation-bar {
+    height: 64px;
+    padding: 0 12px;
+  }
+
+  .header-navigation-section .nav-cta-column a,
+  .header-navigation-section .nav-cta-column button {
+    padding: 8px 16px;
+  }
+}
