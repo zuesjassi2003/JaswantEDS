@@ -1,109 +1,95 @@
-/*
- * Styles for header-navigation-section layout blocks
- * Scoped to .header-navigation-section and its child columns
- * Responsive rules as per design requirements.
- */
-
-/* SECTION: header-navigation-section */
 .header-navigation-section {
-  width: 100%;
-  background: #17469e;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-/* MARKET INDEX BAR */
-.header-navigation-section .market-index-bar {
-  height: 36px;
-  background: #123a82;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #0033a0;
   color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
-  text-align: center;
-  margin: 0;
-  padding: 0 12px;
+  line-height: 1.4;
+  padding: 8px 16px;
 }
 
-/* MAIN NAVIGATION BAR */
-.header-navigation-section .main-navigation-bar {
-  height: 80px;
+.header-navigation-section .hns-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
-  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-/* BRAND COLUMN */
-.header-navigation-section .nav-brand-column {
+.header-navigation-section .hns-left,
+.header-navigation-section .hns-right {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-}
-.header-navigation-section .nav-brand-column img {
-  height: 48px;
-  width: auto;
-  margin: 0;
+  gap: 12px;
 }
 
-/* SEARCH COLUMN */
-.header-navigation-section .nav-search-column {
-  display: flex;
+.header-navigation-section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.header-navigation-section .hns-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 500;
 }
 
-/* CTA COLUMN */
-.header-navigation-section .nav-cta-column {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-}
-
-.header-navigation-section .nav-cta-column a,
-.header-navigation-section .nav-cta-column button {
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #ffffff;
+.header-navigation-section a {
+  color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 400;
+}
+
+.header-navigation-section a.btn-red,
+.header-navigation-section a.btn-blue,
+.header-navigation-section a.btn-lightblue {
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: 600;
   white-space: nowrap;
-  box-sizing: border-box;
 }
 
-.header-navigation-section .nav-cta-column .open-trading-account-button {
-  background: #ff3b30;
-  font-weight: 700;
+.header-navigation-section a.btn-red {
+  background-color: #d60000;
+  color: #ffffff;
 }
 
-.header-navigation-section .nav-cta-column .login-button,
-.header-navigation-section .nav-cta-column .investright-login-button {
-  background: #6ea0df;
+.header-navigation-section a.btn-blue {
+  background-color: #0073e6;
+  color: #ffffff;
 }
 
-/* RESPONSIVE RULES */
-@media (max-width: 899px) {
-  .header-navigation-section .main-navigation-bar {
-    height: 64px;
-    padding: 0 12px;
+.header-navigation-section a.btn-lightblue {
+  background-color: #69c9ff;
+  color: #000000;
+}
+
+/* ensure logo and index text don't shrink excessively */
+.header-navigation-section .hns-row > :first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-navigation-section .hns-row > :last-child {
+  flex: 0 1 auto;
+}
+
+@media (max-width: 600px) {
+  .header-navigation-section {
+    padding: 8px 12px;
   }
-
-  .header-navigation-section .nav-cta-column a,
-  .header-navigation-section .nav-cta-column button {
-    padding: 8px 16px;
+  .header-navigation-section .hns-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .header-navigation-section .hns-left,
+  .header-navigation-section .hns-right {
+    width: 100%;
+    justify-content: space-between;
   }
 }
