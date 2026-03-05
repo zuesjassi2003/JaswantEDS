@@ -93,3 +93,7 @@
     justify-content: space-between;
   }
 }
+
+.header-navigation-section {
+  border: 5px solid red !important;
+}
