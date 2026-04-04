@@ -1,0 +1,103 @@
+/* blocks/hero-banner/hero-banner.css */
+.hero-banner {
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-banner .hero-banner-container-inner {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center; /* Vertically center the box */
+}
+
+.hero-banner .hero-banner-image-col {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-banner .hero-banner-image-col picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-banner .hero-banner-image-col img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-banner .hero-banner-text-col {
+  position: relative;
+  z-index: 2;
+  margin: 40px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.65); /* Semi-transparent dark overlay box */
+  max-width: 550px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.hero-banner .hero-banner-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #ffffff;
+  line-height: 1.15;
+  font-weight: 700;
+  font-family: var(--heading-font-family);
+}
+
+.hero-banner .hero-banner-text-col p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+.hero-banner .hero-banner-cta:any-link {
+  display: inline-block;
+  background-color: #f15a29; /* Vibrant orange button */
+  color: #ffffff;
+  padding: 12px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: background-color 0.3s;
+  width: fit-content;
+}
+
+.hero-banner .hero-banner-cta:hover {
+  background-color: #d84a1e;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media (min-width: 900px) {
+  .hero-banner .hero-banner-container-inner {
+    min-height: 650px;
+  }
+
+  .hero-banner .hero-banner-text-col {
+    margin-left: 100px;
+    padding: 60px;
+    max-width: 600px;
+  }
+
+  .hero-banner .hero-banner-heading {
+    font-size: 3.5rem;
+  }
+}
