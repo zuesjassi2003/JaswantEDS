@@ -6,13 +6,19 @@ export default function decorate(block) {
   const textCol = document.createElement('div');
   textCol.classList.add('hero-banner-text-col');
 
+  let backgroundApplied = false;
   [...block.children].forEach((row) => {
     const cols = [...row.children];
     cols.forEach((col) => {
       const pic = col.querySelector('picture');
-      if (pic) {
-        imageCol.append(...col.childNodes);
-      } else if (col.textContent.trim() !== '' || col.querySelector('a')) {
+      if (pic && !backgroundApplied) {
+        imageCol.append(pic);
+        backgroundApplied = true;
+        // Collect everything else in the column after the picture into textCol
+        [...col.childNodes].forEach((node) => {
+          if (node !== pic) textCol.append(node);
+        });
+      } else if (col.textContent.trim() !== '' || col.querySelector('a') || col.querySelector('img') || col.querySelector('picture')) {
         [...col.childNodes].forEach((node) => {
           textCol.append(node);
         });

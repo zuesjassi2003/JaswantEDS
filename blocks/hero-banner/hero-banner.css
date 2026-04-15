@@ -1,17 +1,40 @@
 /* blocks/hero-banner/hero-banner.css */
+
+.hero-banner-container {
+  max-width: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.hero-banner-container .hero-banner-wrapper {
+  max-width: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .hero-banner {
   position: relative;
-  min-height: 450px;
+  min-height: 100vh;
+  width: 100%;
   overflow: hidden;
   background-color: #000;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important; /* Forces content to the left side */
 }
 
 .hero-banner .hero-banner-container-inner {
-  position: relative;
   width: 100%;
-  min-height: 500px;
-  display: flex;
-  align-items: center; /* Vertically center the box */
+  height: 100%;
+  min-height: 100vh;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
 .hero-banner .hero-banner-image-col {
@@ -38,66 +61,91 @@
 
 .hero-banner .hero-banner-text-col {
   position: relative;
-  z-index: 2;
-  margin: 40px;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.65); /* Semi-transparent dark overlay box */
-  max-width: 550px;
-  border-radius: 10px;
+  padding: 48px;
+  background: rgba(40, 40, 40, 0.75); /* Fixed black overlay card with transparency */
+  max-width: 580px;
+  border-radius: 20px; /* Fixed rounded corners */
   color: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  margin-left: 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .hero-banner .hero-banner-heading {
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 2.5rem;
+  margin-bottom: 24px;
+  font-size: 3.5rem;
   color: #ffffff;
-  line-height: 1.15;
-  font-weight: 700;
+  line-height: 1.1;
+  font-weight: 800;
   font-family: var(--heading-font-family);
+  letter-spacing: -0.01em;
 }
 
 .hero-banner .hero-banner-text-col p {
   color: #ffffff;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  line-height: 1.4;
-  margin-top: 0;
+  font-size: 1.25rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .hero-banner .hero-banner-cta:any-link {
   display: inline-block;
-  background-color: #f15a29; /* Vibrant orange button */
+  background-color: #f15a29; /* Vibrant orange button as per design */
   color: #ffffff;
-  padding: 12px 36px;
-  border-radius: 4px;
+  padding: 14px 40px;
+  border-radius: 8px; /* Fixed rounded corners as requested */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 0.02em;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
   width: fit-content;
+  margin-top: 16px;
 }
 
 .hero-banner .hero-banner-cta:hover {
   background-color: #d84a1e;
   text-decoration: none;
   color: #ffffff;
+  transform: translateY(-2px);
 }
 
 @media (min-width: 900px) {
   .hero-banner .hero-banner-container-inner {
-    min-height: 650px;
+    padding: 0 80px;
   }
 
   .hero-banner .hero-banner-text-col {
-    margin-left: 100px;
+    margin-left: 0;
     padding: 60px;
-    max-width: 600px;
+    max-width: 650px;
   }
 
   .hero-banner .hero-banner-heading {
-    font-size: 3.5rem;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero-banner .hero-banner-container-inner {
+    padding: 0 24px;
+    justify-content: center !important;
+  }
+
+  .hero-banner .hero-banner-text-col {
+    padding: 32px;
+    max-width: 100%;
+    margin-left: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-banner .hero-banner-heading {
+    font-size: 2.25rem;
   }
 }
