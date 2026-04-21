@@ -20,7 +20,8 @@
   background-color: #000;
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important; /* Forces content to the left side */
+  justify-content: flex-start !important;
+  /* Forces content to the left side */
 }
 
 .hero-banner .hero-banner-container-inner {
@@ -62,9 +63,11 @@
 .hero-banner .hero-banner-text-col {
   position: relative;
   padding: 48px;
-  background: rgba(40, 40, 40, 0.75); /* Fixed black overlay card with transparency */
+  background: rgba(40, 40, 40, 0.75);
+  /* Fixed black overlay card with transparency */
   max-width: 580px;
-  border-radius: 20px; /* Fixed rounded corners */
+  border-radius: 20px;
+  /* Fixed rounded corners */
   color: #ffffff;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   margin-left: 40px;
@@ -94,10 +97,12 @@
 
 .hero-banner .hero-banner-cta:any-link {
   display: inline-block;
-  background-color: #f15a29; /* Vibrant orange button as per design */
+  background-color: #f15a29;
+  /* Vibrant orange button as per design */
   color: #ffffff;
   padding: 14px 40px;
-  border-radius: 8px; /* Fixed rounded corners as requested */
+  border-radius: 8px;
+  /* Fixed rounded corners as requested */
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
@@ -110,7 +115,6 @@
 
 .hero-banner .hero-banner-cta:hover {
   background-color: #d84a1e;
-  text-decoration: none;
   color: #ffffff;
   transform: translateY(-2px);
 }
